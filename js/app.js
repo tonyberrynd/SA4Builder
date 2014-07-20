@@ -24,7 +24,7 @@ angular.module('SA4Builder', ['ionic', 'ionicMultipleViews'])
 			.state('appCards', {
 				url: '/apps/:appId',
 				templateUrl: 'templates/app-cards.html',
-				controller: 'AppContentCtrl'
+				controller: 'AppCardListCtrl'
 			})
 			
 			.state('masterDetail', {
@@ -46,6 +46,18 @@ angular.module('SA4Builder', ['ionic', 'ionicMultipleViews'])
 						controller: 'AppCardListCtrl'
 					}
 				}
+			})
+
+			.state('appset', {
+				url: '/appset',
+				templateUrl: 'templates/appset.html',
+				controller: 'AppSetCtrl'
+			})
+			
+			.state('appset.apps', {
+				url: '/appsset:appSetId',
+				templateUrl: 'templates/appList.html',
+				controller: 'AppSetCtrl'
 			});
 
 		$urlRouterProvider.otherwise('/masterDetail/apps');

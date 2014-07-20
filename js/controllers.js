@@ -31,4 +31,9 @@ angular.module('SA4Builder')
 		MultipleViewsManager.updated(function (params) {
 			$scope.app = AppService.getApp(params.appId);
 		});
+	})
+	.controller('AppSetCtrl', function($scope, AppService){
+		$scope.data = {};
+		$scope.data.appsets = AppService.allAppSets();
+
 	});

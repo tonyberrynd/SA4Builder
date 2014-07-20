@@ -40,6 +40,9 @@ angular.module('SA4Builder')
 			allCards: function(){
 				return cards;
 			},
+			allAppSets: function(){
+				return appsets;
+			},
 			getAppSet: function (appSetId) {
 				return appSets[appSetId]
 			},
