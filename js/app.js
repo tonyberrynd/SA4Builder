@@ -17,7 +17,7 @@ angular.module('SA4Builder', ['ionic', 'ionicMultipleViews'])
 		$stateProvider
 			.state('apps', {
 				url: '/apps',
-				templateUrl: 'templates/apps.html',
+				templateUrl: 'templates/applist.html',
 				controller: 'AppListCtrl'
 			})
 			
@@ -37,13 +37,13 @@ angular.module('SA4Builder', ['ionic', 'ionicMultipleViews'])
 				url: '/apps',
 				views: {
 					'app-list': {
-						templateUrl: 'templates/apps.html',
+						templateUrl: 'templates/applist.html',
 						controller: 'AppListCtrl'
 					},
 					
 					'app-cards': {
 						templateUrl: 'templates/app-cards.html',
-						controller: 'AppContentCtrl'
+						controller: 'AppCardListCtrl'
 					}
 				}
 			});

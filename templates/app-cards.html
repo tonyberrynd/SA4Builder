@@ -4,26 +4,11 @@
 	</ion-nav-bar>
 
 	<ion-content class="has-header">
-		<div class="list card" style="border-right: 1px solid #ddd">
-			<div class="item item-avatar">
-				<img src="{{ app.Icon }}">
-				<span class="item-note">2 hours ago</span>
-				<h2>{{ app.Name }}</h2>
-				<p>{{ app.Description }} - {{app.Status}}</p>
-			</div>
-			<div class="item" ng-if="app.content" style="white-space: normal;">
-				{{ app.Description }}
-			</div>
-		</div>
-		<div class="list card" style="border-right: 1px solid #ddd">
-			<div class="item item-avatar">
-				<img src="http://ionicframework.com/img/docs/barrett.jpg">
-				<span class="item-note">sent now</span>
-				<h2>Dana</h2>
-				<p>RE: {{ app.Description }}</p>
-			</div>
-			<div class="item" ng-if="app.content" style="white-space: normal;">
-				<img src="http://i.telegraph.co.uk/multimedia/archive/02676/FACEBOOK-LIKE_2676878b.jpg" width="650"/>
+		<div class="list card" style="border-right: 1px solid #ddd" ng-repeat="card in cards | filter:{ AppId : app.AppId}">
+			<div class="item item-avatar" >
+				<!--<img src="{{ app.Icon }}">-->
+				<h2>{{ card.Name }}</h2>
+				<p>{{ card.Type}}</p>
 			</div>
 		</div>		
 	</ion-content>

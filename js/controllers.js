@@ -2,6 +2,7 @@ angular.module('SA4Builder')
 
 	.controller('AppListCtrl', function ($scope, $state, $location, MultipleViewsManager, AppService) {
 		$scope.apps = AppService.allApps();
+
 		$scope.selectedAppId = 0;	
 		$scope.appSetId = $location.search().AppSetId;
 		
@@ -22,8 +23,10 @@ angular.module('SA4Builder')
 		};
 	})
 
-	.controller('AppContentCtrl', function ($scope, $stateParams, MultipleViewsManager, AppService) {
+	.controller('AppCardListCtrl', function ($scope, $stateParams, MultipleViewsManager, AppService) {
 		$scope.app = AppService.getApp($stateParams.appId);
+		$scope.cards = AppService.allCards();  //TODO: change to subset of cards for selected app via seperate controller
+		
 
 		MultipleViewsManager.updated(function (params) {
 			$scope.app = AppService.getApp(params.appId);
