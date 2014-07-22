@@ -1,0 +1,13 @@
+<ion-view title="App Sets" >
+
+	<ion-content has-header="true">
+		<ion-list ng-repeat="appset in data.appsets">			
+			<ion-item nav-clear ui-sref="base.subMenu({ AppSetId: appset.AppSetId })">
+				<div>
+					{{appset.Name}}
+				<i class="icon ion-chevron-right"></i>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
